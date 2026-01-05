@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            height: 97vh;
+            background-image: url(imagem/fuji.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div#conteudo{
+            background-color: transparent;
+            backdrop-filter: blur(3px);
+            color: white;
+            width: 500px;
+            height: 420px;
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 23px 24px, 
+            rgba(255, 255, 255, 0.12) 0px -12px 30px, 
+            rgba(255, 255, 255, 0.12) 0px 4px 6px, 
+            rgba(255, 255, 255, 0.17) 0px 12px 13px,
+            rgba(255, 255, 255, 0.09) 0px -3px 5px;
+            border-radius: 30px;
+        }
+        
+
+        h1{
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        div#inputs{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.2em;
+
+        }
+
+        input{
+            width: 40%;
+            height: 30px;
+            background-color: rgba(195, 134, 223, 0.245);
+            border-radius: 20px;
+            color: white;
+        }
+        input[type="button"] {
+            margin-top: 20px;
+            height: 40px;
+            font-size: 1em;
+        }
+
+        input[type="button"]:hover{
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+        cursor: pointer;
+        }
+
+        div#res{
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+
+    
+    </style>
+</head>
+<body>
+<div id="conteudo">
+    
+    <h1>Irei descobrir sua idade</h1>
+    <div id="inputs">
+
+       <label for="year">
+            <p>Ano atual</p>
+            <input type="number" name="year" id="year">
+        </label>
+
+        <label for="year">
+            <p>Ano do seu nascimento</p>
+            <input type="number" name="birth" id="birth">
+        </label>
+
+        <input type="button" value="Calcular" onclick="clicar()" >
+    <div id="res"></div>
+</div>
+
+<script>
+    function clicar() {
+        var ano= window.document.getElementById('year')
+        var nascimento= window.document.getElementById('birth')
+        var n1 = Number(ano.value)
+        var n2 = Number(nascimento.value)
+        var s = n1-n2 
+
+        if (s < 0) {
+        res.textContent = "Você não nasceu ainda?"
+        } 
+        else {
+        res.textContent = `A idade que você irá completar esse ano é ${s}`
+        }
+    
+    }
+</script>
+    
+</body>
+</html>
